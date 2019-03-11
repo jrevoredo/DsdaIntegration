@@ -24,6 +24,8 @@
     <IISExpressUseClassicPipelineMode />
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -255,12 +257,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dsda.DataAccessRO\Dsda.DataAccessRO.csproj">
-      <Project>{420ea801-c045-4e8c-aae4-ba6cd6f5474d}</Project>
-      <Name>Dsda.DataAccessRO</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

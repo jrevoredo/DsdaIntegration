@@ -33,6 +33,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -217,12 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Handlers\GridData.ashx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Dsda.DataAccess\Dsda.DataAccess.csproj">
-      <Project>{1961E413-E9A6-4E65-A117-95C2A0AE3EBC}</Project>
-      <Name>Dsda.DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

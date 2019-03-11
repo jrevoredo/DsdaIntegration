@@ -97,12 +97,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dsda.DataAccessRO\Dsda.DataAccessRO.csproj">
-      <Project>{420ea801-c045-4e8c-aae4-ba6cd6f5474d}</Project>
-      <Name>Dsda.DataAccessRO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
