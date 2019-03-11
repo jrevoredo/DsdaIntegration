@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="Dsda.WebUploadStatistics.Global_asax" Language="C#" %>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item Text="Missing PDF" NavigateUrl="~/Reports/MissingPDF.aspx" />
+  <item Text="Missing Metadata" NavigateUrl="~/Reports/MissingMetadata.aspx"  />
+  <item Text="Conversion Error" NavigateUrl="~/Reports/ConversionError.aspx"  />
+  <item Text="Ingestion Error" NavigateUrl="~/Reports/IngestionError.aspx"  />
+</items>

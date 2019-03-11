@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DsdaReports01" Class="LinqDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=EPREVOREDO\SQLDEV2008R2A;Initial Catalog=DsdaReports01;User ID=sa;MultipleActiveResultSets=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MainApplicationServices" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VW_ASassetMetadata" Member="VW_ASassetMetadatas">
+    <Type Name="VW_ASassetMetadata">
+      <Column Name="tenantName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="storeName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dealNumber" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="documentType" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="stockNumber" Type="System.String" DbType="NChar(20)" CanBeNull="true" />
+      <Column Name="lastName" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="firstName" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="year" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Column Name="make" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="model" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="slsDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="vin" Type="System.String" DbType="NChar(17)" CanBeNull="true" />
+      <Column Name="creationDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="processDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_ASmissingMetadata" Member="VW_ASmissingMetadatas">
+    <Type Name="VW_ASmissingMetadata">
+      <Column Name="tenantName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="storeName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="documentType" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dealNumber" Type="System.String" DbType="Char(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="resolved" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_ASconversionError" Member="VW_ASconversionErrors">
+    <Type Name="VW_ASconversionError">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fileName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="row" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="errorMessage" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="movedToErrorFolder" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_ASingestionError" Member="VW_ASingestionErrors">
+    <Type Name="VW_ASingestionError">
+      <Column Name="maxId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tenantName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="storeName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dealNumber" Type="System.String" DbType="Char(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="error_message" Type="System.String" DbType="NVarChar(4000)" IsPrimaryKey="true" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASconversionError" Member="ASconversionErrors">
+    <Type Name="ASconversionError">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fileName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="row" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="errorMessage" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="movedToErrorFolder" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ASingestionError" Member="ASingestionErrors">
+    <Type Name="ASingestionError">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenantName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="storeName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dealNumber" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="error_message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>
