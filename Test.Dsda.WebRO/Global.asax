@@ -1,1 +1,0 @@
-<%@ Application Codebehind="Global.asax.cs" Inherits="Test.Dsda.WebRO.Global_asax" Language="C#" %>
