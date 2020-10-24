@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
   For more information on how to configure your ASP.NET application, please visit
   http://go.microsoft.com/fwlink/?LinkId=169433
@@ -10,39 +9,32 @@
       <section name="compression" type="DevExpress.Web.CompressionConfigurationSection, DevExpress.Web.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
       <section name="settings" type="DevExpress.Web.SettingsConfigurationSection, DevExpress.Web.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
       <section name="errors" type="DevExpress.Web.ErrorsConfigurationSection, DevExpress.Web.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
+      <section name="resources" type="DevExpress.Web.ResourcesConfigurationSection, DevExpress.Web.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" requirePermission="false" />
     </sectionGroup>
   </configSections>
   <connectionStrings>
     <!--
     Production Environment
-    <add name="ApplicationServices" connectionString="data source=(localdb)\v11.0;integrated security=SSPI;attachdbfilename=|DataDirectory|\aspnetdb.mdf"
-      providerName="System.Data.SqlClient" />
-    <add name="MainApplicationServices" connectionString="Server=66.175.125.167;Database=master;User Id=sa;Password=Am#er!can08!;MultipleActiveResultSets=True;"
-      providerName="System.Data.SqlClient" />
-    <add name="UserApplicationServices" connectionString="Server=66.175.125.167;Database=master;User Id=sa;Password=Am#er!can08!;MultipleActiveResultSets=True;"
-      providerName="System.Data.SqlClient" />
+    <add name="DsdaIntegrationConnectionString" connectionString="Data Source=assfs1\SQLEXPRESS;Initial Catalog=DsdaIntegration_RO;User ID=sa;pwd=American!;"
+      providerName="System.Data.SqlClient"/>
 
     Testing #01 Environment
-    <add name="ApplicationServices" connectionString="data source=(localdb)\v11.0;integrated security=SSPI;attachdbfilename=|DataDirectory|\aspnetdb.mdf"
-      providerName="System.Data.SqlClient" />
-    <add name="MainApplicationServices" connectionString="Server=EPREVOREDO\SQLDEV2008R2A;Database=DsdaReports01;User Id=sa;Password=jksole&amp;12;MultipleActiveResultSets=True;"
-      providerName="System.Data.SqlClient" />
-    <add name="UserApplicationServices" connectionString="Server=EPREVOREDO\SQLDEV2008R2A;Database=DsdaReports01;User Id=sa;Password=jksole&amp;12;MultipleActiveResultSets=True;"
-      providerName="System.Data.SqlClient" />
-    
-    Testing #02 Environment
-    <add name="ApplicationServices" connectionString="data source=(localdb)\v11.0;integrated security=SSPI;attachdbfilename=|DataDirectory|\aspnetdb.mdf"
-      providerName="System.Data.SqlClient" />
-    <add name="MainApplicationServices" connectionString="Server=JREVOREDO.GILATLA.COM\SQLEXPR2008;Database=DsdaReports01;User Id=sa;Password=jksole&amp;12;MultipleActiveResultSets=True;"
-      providerName="System.Data.SqlClient" />
-    <add name="UserApplicationServices" connectionString="Server=JREVOREDO.GILATLA.COM\SQLEXPR2008;Database=DsdaReports01;User Id=sa;Password=jksole&amp;12;MultipleActiveResultSets=True;"
-      providerName="System.Data.SqlClient" />
+    <add name="DsdaIntegrationConnectionString" connectionString="Data Source=EPREVOREDO\SQLDEV2008R2A;Initial Catalog=DsdaIntegrationRO;User ID=sa;pwd=jksole&amp;12;"
+      providerName="System.Data.SqlClient"/>
     
     -->
-    <add name="MainApplicationServices" connectionString="Server=EPREVOREDO\SQLDEV2008R2A;Database=DsdaReports01;User Id=sa;Password=jksole&amp;12;MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" />
+    <add name="DsdaIntegrationConnectionString" connectionString="Data Source=EPREVOREDO\SQLDEV2008R2A;Initial Catalog=DsdaIntegrationRO;User ID=sa;pwd=jksole&amp;12;" providerName="System.Data.SqlClient" />
   </connectionStrings>
+  <!--
+    For a description of web.config changes for .NET 4.5 see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5" />
+      </system.Web>
+  -->
   <system.web>
-    <compilation debug="true" targetFramework="4.0">
+    <compilation debug="true" targetFramework="4.5">
       <assemblies>
         <add assembly="DevExpress.Data.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Web.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -64,12 +56,11 @@
         <add assembly="DevExpress.Printing.v17.2.Core, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.XtraReports.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.XtraReports.v17.2.Web, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="DevExpress.Web.Resources.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.XtraPivotGrid.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.PivotGrid.v17.2.Core, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.XtraScheduler.v17.2.Core, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
         <add assembly="DevExpress.Web.ASPxScheduler.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-        <add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+        <add assembly="DevExpress.Web.Resources.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
       </assemblies>
     </compilation>
     <authentication mode="Forms">
@@ -152,9 +143,9 @@
     <add key="AUTH_PASSWORD" value="test1" />
   </appSettings>
   <devExpress>
-    <themes enableThemesAssembly="true" styleSheetTheme="" theme="Metropolis" customThemeAssemblies="" />
+    <themes enableThemesAssembly="true" styleSheetTheme="" theme="Metropolis" customThemeAssemblies="" baseColor="" font="" />
     <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
-    <settings doctypeMode="Html5" rightToLeft="false" />
+    <settings doctypeMode="Html5" rightToLeft="false" accessibilityCompliant="false" checkReferencesToExternalScripts="false" protectControlState="true" ieCompatibilityVersion="edge" />
     <errors callbackErrorRedirectUrl="" />
   </devExpress>
 </configuration>
