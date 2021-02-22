@@ -315,11 +315,15 @@ namespace Dsda.Uploader
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(resultXml);
 
+                description = AddDescrItem(description, xmlDoc, "OpenDate");
+                description = AddDescrItem(description, xmlDoc, "CloseDate");
                 description = AddDescrItem(description, xmlDoc, "ContractDate");
                 description = AddDescrItem(description, xmlDoc, "CustNo");
+                description = AddDescrItem(description, xmlDoc, "Name1");
                 description = AddDescrItem(description, xmlDoc, "Name");
                 description = AddDescrItem(description, xmlDoc, "StockNo");
                 description = AddDescrItem(description, xmlDoc, "VIN");
+                description = AddDescrItem(description, xmlDoc, "VehID");
                 description += ((!string.IsNullOrWhiteSpace(description)) ? " " : "") + "" + dealNo.Replace("\"", "").Replace("'", "").Replace("|", "").Replace("&", "");
 
                 if (string.IsNullOrWhiteSpace(dealNo.Replace("\"", "").Replace("'", "").Replace("|", "").Replace("&", "")))
@@ -351,6 +355,28 @@ namespace Dsda.Uploader
 
                 switch (nodeName)
                 {
+                    case "OpenDate":
+                        try
+                        {
+                            DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            _logger.ProcessingDoc.OpenDate = newValue;
+                            value = newValue;
+                            value = "" + value;
+                        }
+                        catch (Exception ex) { throw ex; }
+                        break;
+                    case "CloseDate":
+                        try
+                        {
+                            DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            _logger.ProcessingDoc.CloseDate = newValue;
+                            value = newValue;
+                            value = "" + value;
+                        }
+                        catch (Exception ex) { throw ex; }
+                        break;
                     case "ContractDate":
                         try
                         {
@@ -366,16 +392,24 @@ namespace Dsda.Uploader
                         _logger.ProcessingDoc.CustNo = value;
                         value = "" + value;
                         break;
-                    //case "Name":
-                    //    _logger.ProcessingDoc.CustName = value;
-                    //    value = "" + value;
-                    //    break;
+                    case "Name1":
+                        _logger.ProcessingDoc.Name1 = value;
+                        value = "" + value.Replace(" ", "_");
+                        break;
+                    case "Name":
+                        _logger.ProcessingDoc.Name1 = value;
+                        value = "" + value.Replace(" ","_");
+                        break;
                     case "StockNo":
                         _logger.ProcessingDoc.Stock = value;
                         value = "" + value;
                         break;
                     case "VIN":
                         _logger.ProcessingDoc.Vin = value;
+                        value = "" + value;
+                        break;
+                    case "VehID":
+                        _logger.ProcessingDoc.VehID = value;
                         value = "" + value;
                         break;
                     default:

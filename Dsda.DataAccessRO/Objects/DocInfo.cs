@@ -39,7 +39,7 @@ namespace Dsda.DataAccessRO.Objects
             this.ProcessingDate = DateTime.Now;
         }
 
-        public DocInfo(int docInfoId, DateTime processingDate, string sourceDir, string dealerId, 
+        public DocInfo(int docInfoId, DateTime processingDate, string sourceDir, string dealerId,
             string tagNames, string openDate, string closeDate, string contractDate, string custNo,
             string name1, string name, string stock, string vin, string vehID, string dealId,
             string cabId, string docDate, string docType, string docFolder,
@@ -67,6 +67,6 @@ namespace Dsda.DataAccessRO.Objects
             this.IsProcessed = isProcessed;
             this.ProcessedErrors = processedErrors;
         }
-    
+
     }
 }

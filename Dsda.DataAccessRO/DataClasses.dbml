@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DsdaIntegrationRO" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=EPREVOREDO\SQLDEV2008R2A;Initial Catalog=DsdaIntegrationRO;User ID=sa" SettingsObjectName="Dsda.DataAccessRO.Properties.Settings" SettingsPropertyName="DsdaIntegrationConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DsdaIntegration_RO" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLDEV2017;Initial Catalog=DsdaIntegration_RO;User ID=sa" SettingsObjectName="Dsda.DataAccessRO.Properties.Settings" SettingsPropertyName="DsdaIntegration_ROConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblUploadSessions" Member="tblUploadSessions">
     <Type Name="tblUploadSession">
       <Column Name="UploadSessionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -10,14 +10,6 @@
       <Column Name="FailedFilesCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DealerId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblUploadSessionDetails" Member="tblUploadSessionDetails">
-    <Type Name="tblUploadSessionDetail">
-      <Column Name="UploadSessionDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UploadSessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="MessageType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.tblDocumentProcessing" Member="tblDocumentProcessings">
@@ -44,6 +36,14 @@
       <Column Name="CloseDate" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Name1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="VehID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUploadSessionDetails" Member="tblUploadSessionDetails">
+    <Type Name="tblUploadSessionDetail">
+      <Column Name="UploadSessionDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UploadSessionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MessageType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

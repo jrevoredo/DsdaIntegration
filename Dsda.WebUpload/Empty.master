@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Empty.master.cs" Inherits="Dsda.WebUpload.Empty" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="Content/Additional.css"  />
+    <asp:ContentPlaceHolder ID="EmptyHeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="this.focus();">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="EmptyBodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

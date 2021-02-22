@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DsdaIntegration" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="ConnectionString" ConnectionString="Data Source=EPREVOREDO\SQLDEV2008R2A;Initial Catalog=DsdaIntegration;User ID=sa;Password=jksole&amp;12" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLDEV2017;Initial Catalog=DsdaIntegration;User ID=sa" SettingsObjectName="Dsda.DataAccess.Properties.Settings" SettingsPropertyName="DsdaIntegrationConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.tblUploadSessionDetails" Member="tblUploadSessionDetails">
     <Type Name="tblUploadSessionDetail">
       <Column Name="UploadSessionDetailId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -36,9 +36,14 @@
       <Column Name="CabId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DocDate" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DocType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DocFolder" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocFolder" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="IsProcessed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="ProcessedErrors" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TagNames" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="OpenDate" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CloseDate" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="VehID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

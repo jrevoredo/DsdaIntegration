@@ -7,7 +7,7 @@ using System.Web.SessionState;
 
 namespace Dsda.WebIndex
 {
-    public class Global_asax : System.Web.HttpApplication
+    public class Global : System.Web.HttpApplication
     {
         void Application_Start(object sender, EventArgs e)
         {

@@ -1,0 +1,18 @@
+﻿/* Aux */
+.OptionsTable > tbody {
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+    .OptionsTable > tbody > tr > td {
+        padding: 2px 2px 2px 2px;
+    }
+
+.OptionsTableNoBorder > tbody {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+    .OptionsTableNoBorder > tbody > tr > td {
+        padding: 0px 0px 0px 0px;
+    }

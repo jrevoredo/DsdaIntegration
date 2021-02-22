@@ -48,7 +48,7 @@ namespace Dsda.WebRO.Reports
                 int l_UploadSessionId = 0;
                 Int32.TryParse(Request.QueryString["UploadSessionId"], out l_UploadSessionId);
 
-                using (var context = new Dsda.DataAccessRO.DataClassesDataContext(System.Configuration.ConfigurationManager.ConnectionStrings["DsdaIntegrationConnectionString"].ConnectionString))
+                using (var context = new Dsda.DataAccessRO.DataClassesDataContext(System.Configuration.ConfigurationManager.ConnectionStrings["DsdaIntegrationROConnectionString"].ConnectionString))
                 {
                     var l_USDList = context.tblUploadSessionDetails
                                         .OrderByDescending(order => order.MessageType)

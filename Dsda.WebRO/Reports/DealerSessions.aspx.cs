@@ -21,7 +21,7 @@ namespace Dsda.WebRO.Reports
 
         private void LoadData()
         {
-            using (var context = new Dsda.DataAccessRO.DataClassesDataContext(System.Configuration.ConfigurationManager.ConnectionStrings["DsdaIntegrationConnectionString"].ConnectionString))
+            using (var context = new Dsda.DataAccessRO.DataClassesDataContext(System.Configuration.ConfigurationManager.ConnectionStrings["DsdaIntegrationROConnectionString"].ConnectionString))
             {
                 var l_USList = context.tblUploadSessions
                                     .OrderByDescending(order => order.DateCreated)

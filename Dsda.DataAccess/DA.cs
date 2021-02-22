@@ -252,10 +252,15 @@ namespace Dsda.DataAccess
                 
                 if (record != null)
                 {
+                    record.TagNames = doc.TagNames;
+                    record.OpenDate = doc.OpenDate;
+                    record.CloseDate = doc.CloseDate;
                     record.ContractDate = doc.ContractDate;
                     record.CustNo = doc.CustNo;
+                    record.Name1 = doc.Name1;
                     record.Stock = doc.Stock;
                     record.Vin = doc.Vin;
+                    record.VehID = doc.VehID;
                     record.DealId = doc.DealId;
                     record.CabId = doc.CabId;
                     record.DocDate = doc.DocDate;
@@ -277,10 +282,15 @@ namespace Dsda.DataAccess
                 .Select(s => new DocInfo(s.SourceDir, s.Name, s.DealerId)
                 {
                     ProcessingDate = s.ProcessingDate,
+                    TagNames = s.TagNames,
+                    OpenDate = s.OpenDate,
+                    CloseDate = s.CloseDate,
                     ContractDate = s.ContractDate,
                     CustNo = s.CustNo,
+                    Name1 = s.Name1,
                     Stock = s.Stock,
                     Vin = s.Vin,
+                    VehID = s.VehID,
                     DealId = s.DealId,
                     CabId = s.CabId,
                     DocDate = s.DocDate,

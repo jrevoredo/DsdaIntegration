@@ -42,8 +42,7 @@ namespace Dsda.DataAccess
     #endregion
 		
 		public DataClassesDataContext() : 
-				base("Data Source=EPREVOREDO\\SQLDEV2008R2A;Initial Catalog=DsdaIntegration;User ID=sa;P" +
-						"assword=jksole&12", mappingSource)
+				base(global::Dsda.DataAccess.Properties.Settings.Default.DsdaIntegrationConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -501,6 +500,16 @@ namespace Dsda.DataAccess
 		
 		private string _ProcessedErrors;
 		
+		private string _TagNames;
+		
+		private string _OpenDate;
+		
+		private string _CloseDate;
+		
+		private string _Name1;
+		
+		private string _VehID;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -539,6 +548,16 @@ namespace Dsda.DataAccess
     partial void OnIsProcessedChanged();
     partial void OnProcessedErrorsChanging(string value);
     partial void OnProcessedErrorsChanged();
+    partial void OnTagNamesChanging(string value);
+    partial void OnTagNamesChanged();
+    partial void OnOpenDateChanging(string value);
+    partial void OnOpenDateChanged();
+    partial void OnCloseDateChanging(string value);
+    partial void OnCloseDateChanged();
+    partial void OnName1Changing(string value);
+    partial void OnName1Changed();
+    partial void OnVehIDChanging(string value);
+    partial void OnVehIDChanged();
     #endregion
 		
 		public tblDocumentProcessing()
@@ -826,7 +845,7 @@ namespace Dsda.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocFolder", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocFolder", DbType="NVarChar(1000)")]
 		public string DocFolder
 		{
 			get
@@ -882,6 +901,106 @@ namespace Dsda.DataAccess
 					this._ProcessedErrors = value;
 					this.SendPropertyChanged("ProcessedErrors");
 					this.OnProcessedErrorsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TagNames", DbType="NVarChar(1000)")]
+		public string TagNames
+		{
+			get
+			{
+				return this._TagNames;
+			}
+			set
+			{
+				if ((this._TagNames != value))
+				{
+					this.OnTagNamesChanging(value);
+					this.SendPropertyChanging();
+					this._TagNames = value;
+					this.SendPropertyChanged("TagNames");
+					this.OnTagNamesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpenDate", DbType="NVarChar(100)")]
+		public string OpenDate
+		{
+			get
+			{
+				return this._OpenDate;
+			}
+			set
+			{
+				if ((this._OpenDate != value))
+				{
+					this.OnOpenDateChanging(value);
+					this.SendPropertyChanging();
+					this._OpenDate = value;
+					this.SendPropertyChanged("OpenDate");
+					this.OnOpenDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CloseDate", DbType="NVarChar(100)")]
+		public string CloseDate
+		{
+			get
+			{
+				return this._CloseDate;
+			}
+			set
+			{
+				if ((this._CloseDate != value))
+				{
+					this.OnCloseDateChanging(value);
+					this.SendPropertyChanging();
+					this._CloseDate = value;
+					this.SendPropertyChanged("CloseDate");
+					this.OnCloseDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name1", DbType="NVarChar(1000)")]
+		public string Name1
+		{
+			get
+			{
+				return this._Name1;
+			}
+			set
+			{
+				if ((this._Name1 != value))
+				{
+					this.OnName1Changing(value);
+					this.SendPropertyChanging();
+					this._Name1 = value;
+					this.SendPropertyChanged("Name1");
+					this.OnName1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VehID", DbType="NVarChar(100)")]
+		public string VehID
+		{
+			get
+			{
+				return this._VehID;
+			}
+			set
+			{
+				if ((this._VehID != value))
+				{
+					this.OnVehIDChanging(value);
+					this.SendPropertyChanging();
+					this._VehID = value;
+					this.SendPropertyChanged("VehID");
+					this.OnVehIDChanged();
 				}
 			}
 		}

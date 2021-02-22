@@ -53,10 +53,10 @@
     </Compile>
     <Compile Include="DataContracts\GridData.cs" />
     <Compile Include="DataContracts\GridDataRow.cs" />
-    <Compile Include="DsdaIntegrationDataSet.Designer.cs">
+    <Compile Include="DsdaIntegrationRODataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DsdaIntegrationDataSet.xsd</DependentUpon>
+      <DependentUpon>DsdaIntegrationRODataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Objects\DealerFiles.cs" />
     <Compile Include="Objects\DocInfo.cs" />
@@ -76,16 +76,19 @@
       <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DsdaIntegrationDataSet.xsc">
-      <DependentUpon>DsdaIntegrationDataSet.xsd</DependentUpon>
+    <None Include="DataClasses.dbml.layout">
+      <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
-    <None Include="DsdaIntegrationDataSet.xsd">
+    <None Include="DsdaIntegrationRODataSet.xsc">
+      <DependentUpon>DsdaIntegrationRODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DsdaIntegrationRODataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsdaIntegrationDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DsdaIntegrationRODataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DsdaIntegrationDataSet.xss">
-      <DependentUpon>DsdaIntegrationDataSet.xsd</DependentUpon>
+    <None Include="DsdaIntegrationRODataSet.xss">
+      <DependentUpon>DsdaIntegrationRODataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,11 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DataClasses.dbml.layout">
-      <DependentUpon>DataClasses.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

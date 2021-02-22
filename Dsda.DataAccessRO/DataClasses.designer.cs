@@ -22,7 +22,7 @@ namespace Dsda.DataAccessRO
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DsdaIntegrationRO")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DsdaIntegration_RO")]
 	public partial class DataClassesDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,16 +33,16 @@ namespace Dsda.DataAccessRO
     partial void InserttblUploadSession(tblUploadSession instance);
     partial void UpdatetblUploadSession(tblUploadSession instance);
     partial void DeletetblUploadSession(tblUploadSession instance);
-    partial void InserttblUploadSessionDetail(tblUploadSessionDetail instance);
-    partial void UpdatetblUploadSessionDetail(tblUploadSessionDetail instance);
-    partial void DeletetblUploadSessionDetail(tblUploadSessionDetail instance);
     partial void InserttblDocumentProcessing(tblDocumentProcessing instance);
     partial void UpdatetblDocumentProcessing(tblDocumentProcessing instance);
     partial void DeletetblDocumentProcessing(tblDocumentProcessing instance);
+    partial void InserttblUploadSessionDetail(tblUploadSessionDetail instance);
+    partial void UpdatetblUploadSessionDetail(tblUploadSessionDetail instance);
+    partial void DeletetblUploadSessionDetail(tblUploadSessionDetail instance);
     #endregion
 		
 		public DataClassesDataContext() : 
-				base(global::Dsda.DataAccessRO.Properties.Settings.Default.DsdaIntegrationConnectionString, mappingSource)
+				base(global::Dsda.DataAccessRO.Properties.Settings.Default.DsdaIntegration_ROConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -79,19 +79,19 @@ namespace Dsda.DataAccessRO
 			}
 		}
 		
-		public System.Data.Linq.Table<tblUploadSessionDetail> tblUploadSessionDetails
-		{
-			get
-			{
-				return this.GetTable<tblUploadSessionDetail>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tblDocumentProcessing> tblDocumentProcessings
 		{
 			get
 			{
 				return this.GetTable<tblDocumentProcessing>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblUploadSessionDetail> tblUploadSessionDetails
+		{
+			get
+			{
+				return this.GetTable<tblUploadSessionDetail>();
 			}
 		}
 	}
@@ -301,140 +301,6 @@ namespace Dsda.DataAccessRO
 					this._Notes = value;
 					this.SendPropertyChanged("Notes");
 					this.OnNotesChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUploadSessionDetails")]
-	public partial class tblUploadSessionDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UploadSessionDetailId;
-		
-		private int _UploadSessionId;
-		
-		private string _Message;
-		
-		private int _MessageType;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUploadSessionDetailIdChanging(int value);
-    partial void OnUploadSessionDetailIdChanged();
-    partial void OnUploadSessionIdChanging(int value);
-    partial void OnUploadSessionIdChanged();
-    partial void OnMessageChanging(string value);
-    partial void OnMessageChanged();
-    partial void OnMessageTypeChanging(int value);
-    partial void OnMessageTypeChanged();
-    #endregion
-		
-		public tblUploadSessionDetail()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UploadSessionDetailId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UploadSessionDetailId
-		{
-			get
-			{
-				return this._UploadSessionDetailId;
-			}
-			set
-			{
-				if ((this._UploadSessionDetailId != value))
-				{
-					this.OnUploadSessionDetailIdChanging(value);
-					this.SendPropertyChanging();
-					this._UploadSessionDetailId = value;
-					this.SendPropertyChanged("UploadSessionDetailId");
-					this.OnUploadSessionDetailIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UploadSessionId", DbType="Int NOT NULL")]
-		public int UploadSessionId
-		{
-			get
-			{
-				return this._UploadSessionId;
-			}
-			set
-			{
-				if ((this._UploadSessionId != value))
-				{
-					this.OnUploadSessionIdChanging(value);
-					this.SendPropertyChanging();
-					this._UploadSessionId = value;
-					this.SendPropertyChanged("UploadSessionId");
-					this.OnUploadSessionIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(MAX)")]
-		public string Message
-		{
-			get
-			{
-				return this._Message;
-			}
-			set
-			{
-				if ((this._Message != value))
-				{
-					this.OnMessageChanging(value);
-					this.SendPropertyChanging();
-					this._Message = value;
-					this.SendPropertyChanged("Message");
-					this.OnMessageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MessageType", DbType="Int NOT NULL")]
-		public int MessageType
-		{
-			get
-			{
-				return this._MessageType;
-			}
-			set
-			{
-				if ((this._MessageType != value))
-				{
-					this.OnMessageTypeChanging(value);
-					this.SendPropertyChanging();
-					this._MessageType = value;
-					this.SendPropertyChanged("MessageType");
-					this.OnMessageTypeChanged();
 				}
 			}
 		}
@@ -1001,6 +867,140 @@ namespace Dsda.DataAccessRO
 					this._VehID = value;
 					this.SendPropertyChanged("VehID");
 					this.OnVehIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblUploadSessionDetails")]
+	public partial class tblUploadSessionDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UploadSessionDetailId;
+		
+		private int _UploadSessionId;
+		
+		private string _Message;
+		
+		private int _MessageType;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUploadSessionDetailIdChanging(int value);
+    partial void OnUploadSessionDetailIdChanged();
+    partial void OnUploadSessionIdChanging(int value);
+    partial void OnUploadSessionIdChanged();
+    partial void OnMessageChanging(string value);
+    partial void OnMessageChanged();
+    partial void OnMessageTypeChanging(int value);
+    partial void OnMessageTypeChanged();
+    #endregion
+		
+		public tblUploadSessionDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UploadSessionDetailId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UploadSessionDetailId
+		{
+			get
+			{
+				return this._UploadSessionDetailId;
+			}
+			set
+			{
+				if ((this._UploadSessionDetailId != value))
+				{
+					this.OnUploadSessionDetailIdChanging(value);
+					this.SendPropertyChanging();
+					this._UploadSessionDetailId = value;
+					this.SendPropertyChanged("UploadSessionDetailId");
+					this.OnUploadSessionDetailIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UploadSessionId", DbType="Int NOT NULL")]
+		public int UploadSessionId
+		{
+			get
+			{
+				return this._UploadSessionId;
+			}
+			set
+			{
+				if ((this._UploadSessionId != value))
+				{
+					this.OnUploadSessionIdChanging(value);
+					this.SendPropertyChanging();
+					this._UploadSessionId = value;
+					this.SendPropertyChanged("UploadSessionId");
+					this.OnUploadSessionIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="NVarChar(MAX)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this.OnMessageChanging(value);
+					this.SendPropertyChanging();
+					this._Message = value;
+					this.SendPropertyChanged("Message");
+					this.OnMessageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MessageType", DbType="Int NOT NULL")]
+		public int MessageType
+		{
+			get
+			{
+				return this._MessageType;
+			}
+			set
+			{
+				if ((this._MessageType != value))
+				{
+					this.OnMessageTypeChanging(value);
+					this.SendPropertyChanging();
+					this._MessageType = value;
+					this.SendPropertyChanged("MessageType");
+					this.OnMessageTypeChanged();
 				}
 			}
 		}

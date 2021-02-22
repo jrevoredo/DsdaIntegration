@@ -1,0 +1,17 @@
+<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Dsda.WebUploadRO.MainMaster" %>
+
+<%-- DXCOMMENT: Page Main.master is a master page that contains central area layout --%>
+
+<asp:Content ID="MainHeadContent" ContentPlaceHolderID="RootHeadContent" runat="server">
+    <link rel="stylesheet" type="text/css" href="Content/Additional.css"  />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="MainBodyContent" ContentPlaceHolderID="RootBodyContent" runat="server">
+    <div class="content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>	
+</asp:Content>

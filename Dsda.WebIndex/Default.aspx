@@ -46,13 +46,13 @@
             <td style="width: 2.5%;"></td>
             <td style="width: 95%; vertical-align: top;">
                 <br /><b>ADP Upload Errors</b>
-                <br /><a href="http://dpfsweb/UploadStatistics/">http://dpfsweb/UploadStatistics</a>
+                <br /><asp:HyperLink ID="hypUploadStatistics" runat="server"></asp:HyperLink>
                 <br />
                 <br /><b>ADP Upload Statistics</b>
-                <br /><a href="http://dpfsweb/ADPUpload/">http://dpfsweb/ADPUpload</a>
+                <br /><asp:HyperLink ID="hypADPUpload" runat="server"></asp:HyperLink>
                 <br />
                 <br /><b>ADP Upload RO Statistics</b>
-                <br /><a href="http://dpfsweb/ADPUploadRO/">http://dpfsweb/ADPUploadRO</a>
+                <br /><asp:HyperLink ID="hypADPUploadRO" runat="server"></asp:HyperLink>
                 <br />
             </td>
             <td style="width: 2.5%;"></td>

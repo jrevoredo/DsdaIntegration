@@ -1,7 +1,6 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="Dsda.WebUploadStatistics.RootMaster" %>
 
-<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-
+<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 
 <%-- DXCOMMENT: Page Root.master is a master page that contains the root layout (it includes Header, Cental Area, and Footer) --%>
@@ -52,7 +51,7 @@
                         </div>
                         <div class="headerMenu">
                             <%-- DXCOMMENT: Configure the header menu --%>
-                            <dx:ASPxMenu ID="ASPxMenu1" runat="server" ItemAutoWidth="False" RenderMode="Lightweight" Width="100%"
+                            <dx:ASPxMenu ID="ASPxMenu1" runat="server" ItemAutoWidth="False" Width="100%"
                                 DataSourceID="XmlDataSourceHeader" Theme="BlackGlass">
                                 <Border BorderWidth="0px" />
                                 <BorderTop BorderWidth="1px" />

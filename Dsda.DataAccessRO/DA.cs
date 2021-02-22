@@ -20,7 +20,7 @@ namespace Dsda.DataAccessRO
     {
         private DataClassesDataContext context =
             new DataClassesDataContext(
-                ConfigurationManager.ConnectionStrings["DsdaIntegrationConnectionString"].ConnectionString);
+                ConfigurationManager.ConnectionStrings["DsdaIntegrationROConnectionString"].ConnectionString);
 
         public GridData GetDealerIds()
         {

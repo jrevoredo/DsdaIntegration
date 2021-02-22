@@ -343,10 +343,14 @@ namespace Dsda.UploaderRO
                 xmlDoc.LoadXml(resultXml);
 
                 description = AddDescrItem(description, xmlDoc, "OpenDate");
+                description = AddDescrItem(description, xmlDoc, "CloseDate");
+                description = AddDescrItem(description, xmlDoc, "ContractDate");
                 description = AddDescrItem(description, xmlDoc, "CustNo");
                 description = AddDescrItem(description, xmlDoc, "Name1");
+                description = AddDescrItem(description, xmlDoc, "Name");
                 description = AddDescrItem(description, xmlDoc, "StockNo");
                 description = AddDescrItem(description, xmlDoc, "VIN");
+                description = AddDescrItem(description, xmlDoc, "VehID");
                 description = AddDescrItem(description, xmlDoc, "RONumber");
                 //description += ((!string.IsNullOrWhiteSpace(description)) ? " " : "") + "REFNO_" + dealNo.Replace("\"", "").Replace("'", "").Replace("|", "").Replace("&", "");
 
@@ -384,9 +388,32 @@ namespace Dsda.UploaderRO
                         {
                             DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                             var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
-                            _logger.ProcessingDoc.CloseDate = newValue;
+                            _logger.ProcessingDoc.OpenDate = newValue;
                             value = newValue;
                             value = "DATE_" + value;
+                        }
+                        catch (Exception ex) { throw ex; }
+                        break;
+
+                    case "CloseDate":
+                        try
+                        {
+                            DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            _logger.ProcessingDoc.CloseDate = newValue;
+                            value = newValue;
+                            value = "CLSDATE_" + value;
+                        }
+                        catch (Exception ex) { throw ex; }
+                        break;
+                    case "ContractDate":
+                        try
+                        {
+                            DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            _logger.ProcessingDoc.ContractDate = newValue;
+                            value = newValue;
+                            value = "CONDATE_" + value;
                         }
                         catch (Exception ex) { throw ex; }
                         break;
@@ -396,7 +423,11 @@ namespace Dsda.UploaderRO
                         break;
                     case "Name1":
                         _logger.ProcessingDoc.Name1 = value;
-                        value = "CNAME_" + value;
+                        value = "CNAME_" + value.Replace(" ", "_");
+                        break;
+                    case "Name":
+                        _logger.ProcessingDoc.Name1 = value;
+                        value = "CNAME_" + value.Replace(" ", "_");
                         break;
                     case "StockNo":
                         _logger.ProcessingDoc.Stock = value;
@@ -405,6 +436,10 @@ namespace Dsda.UploaderRO
                     case "VIN":
                         _logger.ProcessingDoc.Vin = value;
                         value = "VIN_" + value;
+                        break;
+                    case "VehID":
+                        _logger.ProcessingDoc.VehID = value;
+                        value = "VEHID_" + value;
                         break;
                     case "RONumber":
                         value = "REFNO_" + value;
@@ -430,10 +465,14 @@ namespace Dsda.UploaderRO
                 xmlDoc.LoadXml(resultXml);
 
                 tagNames = AddTagNameItem(tagNames, xmlDoc, "OpenDate");
+                tagNames = AddTagNameItem(tagNames, xmlDoc, "CloseDate");
+                tagNames = AddTagNameItem(tagNames, xmlDoc, "ContractDate");
                 tagNames = AddTagNameItem(tagNames, xmlDoc, "CustNo");
                 tagNames = AddTagNameItem(tagNames, xmlDoc, "Name1");
+                tagNames = AddTagNameItem(tagNames, xmlDoc, "Name");
                 tagNames = AddTagNameItem(tagNames, xmlDoc, "StockNo");
                 tagNames = AddTagNameItem(tagNames, xmlDoc, "VIN");
+                tagNames = AddTagNameItem(tagNames, xmlDoc, "VehID");
                 tagNames = AddTagNameItem(tagNames, xmlDoc, "RONumber");
                 //tagNames += ((!string.IsNullOrWhiteSpace(tagNames)) ? "," : "") + "REFNO";
 
@@ -476,10 +515,33 @@ namespace Dsda.UploaderRO
                         }
                         catch (Exception ex) { throw ex; }
                         break;
+                    case "CloseDate":
+                        try
+                        {
+                            DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            value = newValue;
+                            value = "CLSDATE";
+                        }
+                        catch (Exception ex) { throw ex; }
+                        break;
+                    case "ContractDate":
+                        try
+                        {
+                            DateTime dt = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                            var newValue = dt.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture);
+                            value = newValue;
+                            value = "CONDATE";
+                        }
+                        catch (Exception ex) { throw ex; }
+                        break;
                     case "CustNo":
                         value = "CNUM";
                         break;
                     case "Name1":
+                        value = "CNAME";
+                        break;
+                    case "Name":
                         value = "CNAME";
                         break;
                     case "StockNo":
@@ -487,6 +549,9 @@ namespace Dsda.UploaderRO
                         break;
                     case "VIN":
                         value = "VIN";
+                        break;
+                    case "VehID":
+                        value = "VEHID";
                         break;
                     case "RONumber":
                         value = "REFNO";

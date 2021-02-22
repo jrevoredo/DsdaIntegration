@@ -1,0 +1,13 @@
+<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="Light.master.cs" Inherits="Dsda.WebUploadRO.LightMaster" %>
+
+<%-- DXCOMMENT: Page Light.master is a master page for Account pages --%>
+
+<asp:Content ID="LightHeadContent" ContentPlaceHolderID="RootHeadContent" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</asp:Content>
+
+<asp:Content ID="LightBodyContent" ContentPlaceHolderID="RootBodyContent" runat="server">
+    <div class="content">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+</asp:Content>

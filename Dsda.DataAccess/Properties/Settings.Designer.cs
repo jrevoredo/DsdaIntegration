@@ -12,7 +12,7 @@ namespace Dsda.DataAccess.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,8 +26,7 @@ namespace Dsda.DataAccess.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=EPREVOREDO\\SQLDEV2008R2A;Initial Catalog=DsdaIntegration;User ID=sa;P" +
-            "assword=jksole&12")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\\SQLDEV2017;Initial Catalog=DsdaIntegration;User ID=sa")]
         public string DsdaIntegrationConnectionString {
             get {
                 return ((string)(this["DsdaIntegrationConnectionString"]));
